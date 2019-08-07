@@ -1,16 +1,16 @@
-import React from 'react';
+import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Form from './Form';
 
-function App() {
-  return (
-    <div className="Submit">
-      <header className="Form">
-        <p>
-        <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method = "post">
-        <p>
+class App extends Component {
+  render() {
+  return(
+    <div className="App">
+      <Form />
     </div>
   );
+  }
 }
 
 export default App;
