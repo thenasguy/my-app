@@ -1,4 +1,12 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import Button from '@material-ui/core/Button';
+import Container from '@material-ui/core/Container';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
+import Link from '@material-ui/core/Link';
+import Grid from '@material-ui/core/Grid';
 
 export default class Form extends React.Component {
   state = {
@@ -41,6 +49,8 @@ export default class Form extends React.Component {
   }
   render() {
     return (
+      <Container component="main" maxWidth="xs">
+      <CssBaseline />
       <form>
         <input
           name = 'firstName'
@@ -70,8 +80,21 @@ export default class Form extends React.Component {
           onChange={e => this.change(e)}
         />
         <br />
-        <button onClick={e => this.onSubmit(e)}>Submit</button>
+        <Button variant="contained" size='large' color='primary'onClick={e => this.onSubmit(e)}>Submit</Button>
       </form>
+      <Grid container>
+            <Grid item xs>
+              <Link href="#" variant="body2">
+                {"Call us at"}
+              </Link>
+            </Grid>
+            <Grid item>
+              <Link href="#" variant="body2">
+                {"Email us @"}
+              </Link>
+            </Grid>
+          </Grid>
+       </Container>
     );
   }
 }
